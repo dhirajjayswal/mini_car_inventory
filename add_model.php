@@ -29,7 +29,12 @@
       </select>
     </div>
   </div>
-    <div class="col-md-4">
+    <div class="col-md-2">
+      <div class="form-group">
+    <input type="text" class="form-control" id="qty" placeholder="Enter Quantity">
+  </div>
+    </div>
+    <div class="col-md-2">
       <input type="submit" class="btn btn-primary" onclick="sub()">
     </div>
   </div>
@@ -42,10 +47,11 @@
   function sub(){
   var model = $("#model").val();
   var manu_cmpny = $("#manufacturer").val();
+  var qty = $("#qty").val();
     $.ajax({
       url: 'car.php',
       type: 'post',
-      data: {manu_cmpny: manu_cmpny,model:model},                      
+      data: {manu_cmpny: manu_cmpny,model:model,qty:qty},                      
       success: function(data)        
       {
        alert(data);
